@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".SuccessActivity">
+    tools:context=".ui.SuccessActivity">
 
   <ImageView
       android:id="@+id/imgCinema1"

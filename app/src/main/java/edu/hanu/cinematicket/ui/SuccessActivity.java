@@ -1,10 +1,12 @@
-package edu.hanu.cinematicket;
+package edu.hanu.cinematicket.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import edu.hanu.cinematicket.R;
 
 public class SuccessActivity extends AppCompatActivity {
 

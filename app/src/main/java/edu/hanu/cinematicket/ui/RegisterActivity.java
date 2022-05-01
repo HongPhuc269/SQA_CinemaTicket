@@ -1,4 +1,4 @@
-package edu.hanu.cinematicket;
+package edu.hanu.cinematicket.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import edu.hanu.cinematicket.R;
 
 public class RegisterActivity extends AppCompatActivity {
     FirebaseAuth auth;
@@ -36,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //             Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_LONG).show();
-//                auth.crea
+
                 String user = tlLogin.getEditText().getText().toString().trim();
                 String pass = tlPass.getEditText().getText().toString().trim();
                 String confirmPass = tlConfirmPass.getEditText().getText().toString().trim();
@@ -72,4 +74,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+
+    //TO DO: handle register
 }

@@ -17,5 +17,7 @@
     <string name="hi">Hi</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="best_film_recent">The best films are hight rated</string>
 
+    <string name="description">description</string>
 </resources>

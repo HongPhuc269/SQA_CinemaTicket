@@ -10,13 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CinemaTicket">
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.ChooseSeatActivity"
             android:exported="false" />
         <activity
-            android:name=".SuccessActivity"
+            android:name=".ui.MovieDetailActivity"
+            android:theme="@style/bg"
+            android:exported="false"
+            android:parentActivityName=".ui.HomeActivity" />
+        <activity
+            android:name=".ui.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.SuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RegisterActivity"
             android:exported="false" />
 
         <meta-data
@@ -24,7 +32,7 @@
             android:resource="@xml/button_background" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
