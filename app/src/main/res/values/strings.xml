@@ -20,4 +20,5 @@
     <string name="best_film_recent">The best films are hight rated</string>
 
     <string name="description">description</string>
+    <string name="choose_one_time">You must choose only ONE time !</string>
 </resources>

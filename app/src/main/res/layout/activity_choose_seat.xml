@@ -3,17 +3,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/black"
     android:layout_height="match_parent"
     tools:context=".ui.ChooseSeatActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="300dp"
+    <TextView
+        android:id="@+id/txtChoose"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="304dp"
-        android:background="@drawable/button_background"
-        android:text="Button"
+        android:layout_marginTop="13dp"
+        android:paddingStart="20dp"
+        android:text="Choose Seat:"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@id/txtChoose"
+        app:flow_maxElementsWrap="@integer/material_motion_duration_long_2"
+        android:id="@+id/RVSeat"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/RVDate" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RVDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RVDate">
+
+        <TextView
+            android:id="@+id/time9"
+            style="@style/time"
+            android:text="9:00" />
+
+        <TextView
+            android:id="@+id/time12"
+            style="@style/time"
+            android:text="12:00" />
+
+        <TextView
+            android:id="@+id/time16"
+            style="@style/time"
+            android:text="16:00" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Order"
+        android:textColor="@color/black"
+        app:backgroundTint="#A5E689"
+        android:background="@drawable/button_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
