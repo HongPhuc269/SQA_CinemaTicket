@@ -21,9 +21,26 @@ public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.MyViewHolder> 
     int rowIndex = -1;
     Context context;
     List<Seat> mSeat;
+
+    int lastClickedPos;
     public SeatAdapter(Context context, List<Seat> mSeat) {
         this.context = context;
         this.mSeat = mSeat;
+    }
+
+    public int getLastClickedPos() {
+        return lastClickedPos;
+    }
+
+    public void setLastClickedPos(int lastClickedPos) {
+        this.lastClickedPos = lastClickedPos;
+    }
+
+    public String getRowByPos(int pos){
+        if (mSeat != null && mSeat.size() > 0){
+            return mSeat.get(pos).getSeatNum();
+        }
+        return null;
     }
 
     @NonNull
@@ -66,6 +83,13 @@ public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.MyViewHolder> 
             super(itemView);
             tvSeat = itemView.findViewById(R.id.seat);
             constraintLayoutSeat = itemView.findViewById(R.id.constraintLayoutSeat);
+
+            constraintLayoutSeat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    lastClickedPos = getAdapterPosition();
+                }
+            });
         }
     }
 }

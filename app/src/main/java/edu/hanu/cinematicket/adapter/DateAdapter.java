@@ -23,11 +23,27 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.MyViewHolder> 
     Context context;
     List<Date> mDate;
 
+    int lastItemClicked;
+
     public DateAdapter(Context context, List<Date> mDate) {
         this.context = context;
         this.mDate = mDate;
     }
 
+    public int getLastItemClicked() {
+        return lastItemClicked;
+    }
+
+    public void setLastItemClicked(int lastItemClicked) {
+        this.lastItemClicked = lastItemClicked;
+    }
+
+    public String getDateForPosition(int pos){
+        if (mDate != null && mDate.size() > 0){
+            return mDate.get(pos).getDate();
+        }
+        return null;
+    }
 
     @NonNull
     @Override
@@ -75,6 +91,12 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.MyViewHolder> 
             tvDate =itemView.findViewById(R.id.date);
             tvWeekday = itemView.findViewById(R.id.weekday);
 
+            constraintLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    lastItemClicked = getAdapterPosition();
+                }
+            });
         }
     }
 }

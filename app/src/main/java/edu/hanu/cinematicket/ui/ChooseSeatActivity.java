@@ -1,18 +1,30 @@
 package edu.hanu.cinematicket.ui;
 
+import static android.content.ContentValues.TAG;
+
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.hanu.cinematicket.R;
 import edu.hanu.cinematicket.adapter.DateAdapter;
@@ -29,6 +41,9 @@ public class ChooseSeatActivity extends AppCompatActivity {
     private boolean click12 = false;
     private boolean click16 = false;
 
+    private FirebaseFirestore db;
+    private Button orderBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +51,9 @@ public class ChooseSeatActivity extends AppCompatActivity {
 
         RVDate = findViewById(R.id.RVDate);
         RVSeat = findViewById(R.id.RVSeat);
+
+        db = FirebaseFirestore.getInstance();
+        orderBtn = findViewById(R.id.orderBtn);
 
         List<Date> lstDate = new ArrayList<>();
 
@@ -78,6 +96,36 @@ public class ChooseSeatActivity extends AppCompatActivity {
         SeatAdapter seatAdapter =new SeatAdapter(this, lstSeat);
         RVSeat.setLayoutManager(new GridLayoutManager(this, 6));
         RVSeat.setAdapter(seatAdapter);
+
+        orderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String seatNo = String.valueOf(seatAdapter.getRowByPos(seatAdapter.getLastClickedPos()));
+                String currentDate = String.valueOf(dateAdapter.getDateForPosition(dateAdapter.getLastItemClicked()));
+                String time = tvTime9.getText().toString();
+                Map<String,Object> book = new HashMap<>();
+                book.put("Seat Number",seatNo);
+                book.put("Current Date",currentDate);
+                book.put("The Timer",time);
+                db.collection("book")
+                        .add(book)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+//                                Log.d(TAG, "DocumentSnapshot successfully written!");
+                                Toast.makeText(ChooseSeatActivity.this, "Successful added", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+//                        Log.w(TAG, "Error writing document", e);
+                        Toast.makeText(ChooseSeatActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+        });
+
 
         getSupportActionBar().setTitle("Choose seat & date");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
