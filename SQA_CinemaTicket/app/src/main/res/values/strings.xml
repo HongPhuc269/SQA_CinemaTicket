@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Cinema Ticket</string>
+    <string name="login">LOGIN</string>
+    <string name="create_account">Create new account</string>
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="welcome">Welcome</string>
+    <string name="confirm">CONFIRM PASSWORD</string>
+    <string name="register">Register</string>
+    <string name="success">Successfully</string>
+    <string name="tap">Tap to screen to continue</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="logout">Log out</string>
+    <string name="ticket">Your ticket</string>
+    <string name="profile">Your Profile</string>
+    <string name="hi">Hi</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="best_film_recent">The best films are hight rated</string>
+
+    <string name="description">description</string>
+    <string name="choose_one_time">You must choose only ONE time !</string>
+</resources>
