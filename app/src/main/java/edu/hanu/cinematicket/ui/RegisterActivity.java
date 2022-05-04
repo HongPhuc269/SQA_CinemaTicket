@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +33,6 @@ public class RegisterActivity extends AppCompatActivity {
         tlConfirmPass = findViewById(R.id.txtInputLayoutConfirmPassword);
         auth = FirebaseAuth.getInstance();
 
-        ImageButton imgbtnBackToLogin = findViewById(R.id.imgbtnBackToLogin);
         Button btnRegister = findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,13 +66,10 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
-        imgbtnBackToLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentBackLogin = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intentBackLogin);
-            }
-        });
+
+        getSupportActionBar().setTitle("Register");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
     }
 
     //TO DO: handle register
