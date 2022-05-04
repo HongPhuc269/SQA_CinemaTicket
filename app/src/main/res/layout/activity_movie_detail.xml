@@ -42,7 +42,7 @@
             android:transitionName="sharedName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/spiderman" />
+            app:srcCompat="@drawable/doctor_strange" />
 
 
         <TextView

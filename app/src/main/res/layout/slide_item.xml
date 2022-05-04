@@ -32,15 +32,15 @@
         app:srcCompat="@drawable/gradient_bg" />
 
     <TextView
-        android:textSize="24sp"
-        android:textColor="#ffffff"
         android:id="@+id/slide_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="20dp"
         android:text="TextView"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/slide_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.124"
