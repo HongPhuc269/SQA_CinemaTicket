@@ -95,8 +95,13 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
                         AlertDialog dialog = builder.show();
                         break;
                     case R.id.nav_person:
-                        Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-                        startActivity(intent);
+                        Intent intentProfile = new Intent(HomeActivity.this, ProfileActivity.class);
+                        startActivity(intentProfile);
+                        break;
+
+                    case R.id.nav_history:
+                        Intent intentTicket = new Intent(HomeActivity.this, TicketActivity.class);
+                        startActivity(intentTicket);
                         break;
                 }
 

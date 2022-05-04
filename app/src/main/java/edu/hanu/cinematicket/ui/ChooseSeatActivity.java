@@ -2,6 +2,7 @@ package edu.hanu.cinematicket.ui;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -122,6 +123,9 @@ public class ChooseSeatActivity extends AppCompatActivity {
                         Toast.makeText(ChooseSeatActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+                Intent intent = new Intent(ChooseSeatActivity.this, TicketActivity.class);
+                startActivity(intent);
 
             }
         });
