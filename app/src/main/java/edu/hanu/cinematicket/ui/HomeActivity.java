@@ -10,12 +10,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -44,13 +49,15 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
 
     BottomNavigationView bottomNavigationView;
     private DrawerLayout drawerLayout;
-//    private FirebaseDatabase firebaseDatabase;
+    //    private FirebaseDatabase firebaseDatabase;
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -60,8 +67,46 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        //
+        //Navigation Drawer
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_logout:
+                        //dialog
+                        AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+                        builder.setTitle("Log out ");
+                        builder.setMessage("Do you want to logout ?");
 
+                        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                finish();
+                            }
+                        });
+                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        });
+
+                        AlertDialog dialog = builder.show();
+                        break;
+                    case R.id.nav_person:
+                        Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+
+                return true;
+            }
+
+        });
+        navigationView.bringToFront();
+
+        //
         sliderpaper = findViewById(R.id.slider_pager);
         indicator = findViewById(R.id.indicator);
         MovieRV = findViewById(R.id.RvMovie);
@@ -133,11 +178,12 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
 
     }
 
+    //auto change slide
     class SliderTimer extends TimerTask {
 
         @Override
         public void run() {
-           HomeActivity.this.runOnUiThread(new Runnable() {
+            HomeActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     if (sliderpaper.getCurrentItem()<lstSlide.size()-1){
