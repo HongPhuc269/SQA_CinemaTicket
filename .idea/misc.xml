@@ -17,10 +17,12 @@
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/SQA_Group/SQA_CinemaTicket/app/src/main/res/drawable/userandpass.xml" value="0.1275" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/SQA_Group/SQA_CinemaTicket/app/src/main/res/layout/activity_choose_seat.xml" value="0.22826086956521738" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/SQA_Group/SQA_CinemaTicket/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/SQA_Group/SQA_CinemaTicket/app/src/main/res/layout/activity_movie_detail.xml" value="0.1" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/SQA_Group/SQA_CinemaTicket/app/src/main/res/layout/activity_profile.xml" value="0.22826086956521738" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/SQA_Group/SQA_CinemaTicket/app/src/main/res/layout/activity_register.xml" value="0.22826086956521738" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/SQA_Group/SQA_CinemaTicket/app/src/main/res/layout/activity_ticket.xml" value="0.22826086956521738" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/SQA_Group/SQA_CinemaTicket/app/src/main/res/layout/item_ticket.xml" value="0.22826086956521738" />
+        <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/SQA_Group/SQA_CinemaTicket/app/src/main/res/layout/slide_item.xml" value="0.4" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/SQA_Group/SQA_CinemaTicket/app/src/main/res/menu/main_menu.xml" value="0.259375" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/app/src/main/res/drawable/button_order.xml" value="0.1275" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/.Project/SQA_CinemaTicket/app/src/main/res/drawable/seat_bg.xml" value="0.1275" />
@@ -54,7 +56,6 @@
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/Project/DemoProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27447916666666666" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/Project/DemoProject/app/src/main/res/mipmap-anydpi-v26/ic_person.xml" value="0.2395" />
         <entry key="..\:/Hanu's_Subjects/Spring 2022 SQA/Project/DemoProject/app/src/main/res/mipmap-anydpi-v26/ic_person_round.xml" value="0.137" />
-        <entry key="..\:/SQA_Final/SQA_CinemaTicket/app/src/main/res/layout/activity_profile.xml" value="0.1685185185185185" />
         <entry key="..\:/SQA_GROUP/SQA_CinemaTicket/app/src/main/res/layout/activity_choose_seat.xml" value="0.17314814814814813" />
       </map>
     </option>

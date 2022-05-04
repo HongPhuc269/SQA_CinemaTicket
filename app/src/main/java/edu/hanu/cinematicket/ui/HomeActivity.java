@@ -117,10 +117,10 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
         MovieRV = findViewById(R.id.RvMovie);
 
         lstSlide = new ArrayList<>();
-        lstSlide.add(new Slide(R.drawable.avenger, "add title here"));
-        lstSlide.add(new Slide(R.drawable.spiderman, "add title here"));
-        lstSlide.add(new Slide(R.drawable.venom, "add title here"));
-        lstSlide.add(new Slide(R.drawable.spiderman, "add title here"));
+        lstSlide.add(new Slide(R.drawable.slide1, "Update new movies continuously"));
+        lstSlide.add(new Slide(R.drawable.slide2, "Relaxing space"));
+        lstSlide.add(new Slide(R.drawable.slide3, "Open every day of the week"));
+        lstSlide.add(new Slide(R.drawable.slide4, "Favorite place of the month"));
 
         SlidePagerAdapter adapter = new SlidePagerAdapter(this, lstSlide);
         sliderpaper.setAdapter(adapter);
@@ -152,13 +152,13 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
 
 //
 
-        lstMovie.add(new Movie("Spiderman", R.drawable.spiderman, R.drawable.spiderman_background, "In the film, Parker asks Dr. Stephen Strange (Cumberbatch) to use magic to make his identity as Spider-Man a secret again following its public revelation at the end of Far From Home. When the spell goes wrong, the multiverse is broken open which allows visitors from alternate realities to enter Parker's universe."));
-        lstMovie.add(new Movie("Venom", R.drawable.venom, R.drawable.venom_background, "After a faulty interview with the Life Foundation ruins his career, former reporter Eddie Brock's life is in pieces. Six months later, he comes across the Life Foundation again, and he comes into contact with an alien symbiote and becomes Venom, a parasitic antihero."));
-        lstMovie.add(new Movie("Avenger", R.drawable.avenger, R.drawable.avenger_background, "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos's actions and undo the chaos to the universe, no matter what consequences may be in store, and no matter who they face..."));
-        lstMovie.add(new Movie("Spiderman", R.drawable.spiderman));
-        lstMovie.add(new Movie("Venom", R.drawable.venom));
-        lstMovie.add(new Movie("Avenger", R.drawable.avenger));
-//
+        lstMovie.add(new Movie("Doctor Strange", R.drawable.doctor_strange, R.drawable.doctor_strange,"Dr. Stephen Strange casts a forbidden spell that opens the doorway to the multiverse, including alternate versions of himself, whose threat to humanity is too great for the combined forces of Strange, Wong, and Wanda Maximoff."));
+        lstMovie.add(new Movie("Sangchi", R.drawable.sangchi,  R.drawable.sangchi, "Shang-Chi, the master of weaponry-based Kung Fu, is forced to confront his past after being drawn into the Ten Rings organization."));
+        lstMovie.add(new Movie("Black Widow", R.drawable.blackwidow,R.drawable.blackwidow, "Natasha Romanoff confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises."));
+        lstMovie.add(new Movie("Thor", R.drawable.thor, R.drawable.thor, "Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct."));
+        lstMovie.add(new Movie("Infinity War", R.drawable.infinity, R.drawable.infinity, "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe."));
+        lstMovie.add(new Movie("Captain America", R.drawable.captain, R.drawable.captain, "Political involvement in the Avengers' affairs causes a rift between Captain America and Iron Man."));
+        //
         MovieAdapter movieAdapter = new MovieAdapter(this, lstMovie, this);
         MovieRV.setAdapter(movieAdapter);
         MovieRV.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
