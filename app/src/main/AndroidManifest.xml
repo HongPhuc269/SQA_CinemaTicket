@@ -11,7 +11,9 @@
         android:theme="@style/Theme.CinemaTicket">
         <activity
             android:name=".ui.TicketActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ui.ChooseSeatActivity"
+            android:theme="@style/bg"/>
         <activity
             android:name=".ui.ProfileActivity"
             android:exported="false"
